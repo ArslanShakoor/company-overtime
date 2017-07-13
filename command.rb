@@ -63,3 +63,5 @@ rails g resource Post data:date rationale:text
 #update table column
 rename_column :table, :old_column, :new_column
 
+# check routes for specific model
+rake routes | grep  post
