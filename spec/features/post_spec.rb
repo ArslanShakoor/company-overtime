@@ -8,10 +8,7 @@ describe 'navigate' do
   end
 
   
-  it "has some content" do
-    visit posts_path
-    expect(page).to have_content(/Posts/)
-  end	
+   
   describe "new_post" do
     before do 
       user= User.create(email: "example134@exmdsfaple.com",password: "fanihoja", password_confirmation: "fanihoja", first_name: "arslan", last_name: "shakoor")
