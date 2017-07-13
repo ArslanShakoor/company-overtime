@@ -65,3 +65,6 @@ rename_column :table, :old_column, :new_column
 
 # check routes for specific model
 rake routes | grep  post
+
+#migration to add relationship
+$ rails g migration add_user_to_posts user:references

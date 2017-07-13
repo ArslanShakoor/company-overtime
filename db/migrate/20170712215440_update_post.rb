@@ -1,5 +1,5 @@
 class UpdatePost < ActiveRecord::Migration[5.1]
   def change
-  	rename_column :posts, :data, :date
+  	 add_reference :posts, :user, index: true,  foreign_key: true 	
   end
 end
