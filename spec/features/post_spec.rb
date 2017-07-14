@@ -1,20 +1,32 @@
 require 'rails_helper'
 
 describe 'navigate' do
- 
+  before do 
+    @user = User.create!(email: "examplde134@exmdsfaple.com",password: "fanihoja", password_confirmation: "fanihoja", first_name: "arslan", last_name: "shakoor")
+    login_as(@user, :scope => :user)
+     
+  end  
+
   it 'can be reached successfully' do
     visit posts_path
     expect(page.status_code).to eq(200)
   end
 
+  it 'post page has content' do
+    Post.create!(date: Date.today, rationale: 'post1', user_id: @user.id)
+    Post.create!(date: Date.today, rationale: 'post2', user_id: @user.id)
+    visit posts_path
+    expect(page).to have_content(/post1|post2/)
+  end
+
+
   
    
   describe "new_post" do
-    before do 
-      user= User.create(email: "example134@exmdsfaple.com",password: "fanihoja", password_confirmation: "fanihoja", first_name: "arslan", last_name: "shakoor")
-      login_as(user, :scope => :user)
+     before do 
+      
       visit new_post_path 
-    end  
+    end 
 
     it " can be reached to new_post" do
     expect(page.status_code).to eq(200)
