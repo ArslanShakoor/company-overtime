@@ -22,13 +22,22 @@ describe 'navigate' do
   end
 
 
-  
+  describe "new post click" do
+    it "new post nav click" do
+      visit root_path
+      click_link ("new_post_from_nav")
+      expect(page.status_code).to eq(200) 
+    end  
+  end
+
    
   describe "new_post" do
      before do 
       
       visit new_post_path 
     end 
+   
+   
 
     it " can be reached to new_post" do
     expect(page.status_code).to eq(200)
