@@ -22,13 +22,30 @@ describe 'navigate' do
   end
 
 
-  describe "new post click" do
+  describe "new" do
     it "new post nav click" do
       visit root_path
       click_link ("new_post_from_nav")
       expect(page.status_code).to eq(200) 
     end  
   end
+ 
+ describe "delete" do
+    before do
+      @post = FactoryGirl.create(:post)
+    end  
+    it "delete the post" do
+      visit posts_path
+      click_link ("delete_post_#{@post.id}_from_index")
+      expect(page.status_code).to eq(200) 
+    end  
+  end
+
+  describe "delete" do
+     it "deletes the post" do
+     
+     end
+  end  
 
    
   describe "new_post" do
