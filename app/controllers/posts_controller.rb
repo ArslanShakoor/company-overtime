@@ -24,10 +24,14 @@ class PostsController < ApplicationController
   end
 
   def edit
+    if authorize @post
+      redirect_to posts_path
+    end  
   
   end  
 
   def update
+    authorize @post
      
     if @post.update(require_params)
       redirect_to @post, notice: "your post was created succesfully"
