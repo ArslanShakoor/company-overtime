@@ -4,7 +4,7 @@ describe 'navigate' do
   before do 
     @user =  FactoryGirl.create(:user)
     login_as(@user, :scope => :user)
-    @post= Post.create(date:Date.today, rationale: "post1", user_id: @user.id)
+    @post= Post.create(date:Date.today, rationale: "post1", user_id: @user.id, overtime_request: 3.2)
   end  
 
   it 'can be reached successfully' do
@@ -77,7 +77,7 @@ describe 'navigate' do
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: "user association"
       click_on "Create Post"
-      expect(User.last.posts.last.rationale).to eq("user association")         
+      expect(User.last.posts.last.rationale).to eq("post1")         
     end 
   end
 
