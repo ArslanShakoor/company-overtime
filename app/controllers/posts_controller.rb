@@ -24,10 +24,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-    if authorize @post
-      redirect_to posts_path
-    end  
-  
+    authorize @post
   end  
 
   def update

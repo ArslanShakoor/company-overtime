@@ -18,4 +18,12 @@
     password "asdfasdf"
     password_confirmation "asdfasdf"
   end
+
+  factory :non_authorized_user, class: "User" do
+    first_name 'non'
+    last_name 'authorized'
+    email { generate :email }
+    password "asdfasdf"
+    password_confirmation "asdfasdf"
+  end
 end
