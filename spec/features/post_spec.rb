@@ -69,8 +69,8 @@ describe 'navigate' do
       visit new_post_path
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: "rationale"
-      click_on "Create Post"  
-      expect(page).to have_content("rationale")
+      fill_in 'post[overtime_request]', with: "1.0"
+      expect{click_on "Create Post"}.to change(Post, :count).by(1)
     end
 
     it "always have user associated with" do
