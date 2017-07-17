@@ -4,6 +4,7 @@ describe 'navigate' do
   before do 
     @user =  FactoryGirl.create(:user)
     login_as(@user, :scope => :user)
+    @post= Post.create(date:Date.today, rationale: "post1", user_id: @user.id)
   end  
 
   it 'can be reached successfully' do
@@ -13,13 +14,16 @@ describe 'navigate' do
 
   it 'post page has content' do
     
-    FactoryGirl.create(:post)
-    FactoryGirl.create(:second_post)
-
     visit posts_path
-    expect(page).to have_content(/post1|post2/)
+    expect(page).to have_content(/post1/)
   end
 
+  it 'not show other user content' do
+    @user =  FactoryGirl.create(:user)
+    login_as(@user, :scope => :user)
+    visit posts_path
+    expect(page).not_to have_content(/post1/)
+  end  
 
   describe "new" do
     it "new post nav click" do
@@ -30,9 +34,7 @@ describe 'navigate' do
   end
  
  describe "delete" do
-    before do
-      @post = FactoryGirl.create(:post)
-    end  
+     
     it "delete the post" do
       visit posts_path
       click_link ("delete_post_#{@post.id}_from_index")
@@ -64,6 +66,7 @@ describe 'navigate' do
     end 
     
     it 'allows  to create a new post from the new_page' do
+      visit new_post_path
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: "rationale"
       click_on "Create Post"  
@@ -77,34 +80,23 @@ describe 'navigate' do
       expect(User.last.posts.last.rationale).to eq("user association")         
     end 
   end
-end
-describe "edit" do
-  before do
-    @user =  FactoryGirl.create(:user)
-    login_as(@user, :scope => :user)
-    @post= FactoryGirl.create(:post)
-  end  
 
-  it "can do go to0 the edit page" do
+  describe "edit" do
      
-    visit posts_path
-    click_link "Edit_#{@post.id}"
-    expect(page.status_code).to eq(200)   
+    it "can do go to the edit page" do
+       
+      visit posts_path
+      click_link "Edit_#{@post.id}"
+      expect(page.status_code).to eq(200)   
 
-  end
-  # it "can be edited" do
-  #   visit edit_post_path(@post)
-  #   fill_in 'post[date]', with: Date.today
-  #   fill_in 'post[rationale]', with: "edited content"
-  #   click_on "Update Post"
-  #   expect(page).to have_content(/edited content/)
-  # end
-  it "cannot be  edited by non authorized user" do
-   
-    @non_authorized_user =  FactoryGirl.create(:non_authorized_user)
-    login_as(@non_authorized_user, :scope => :non_authorized_user)
-    visit edit_post_path(@post)
-    expect(current_path).to eq(root_path)
-  end 
-  
-end	
+    end
+    
+    it "cannot be  edited by non authorized user" do
+     
+      @user =  FactoryGirl.create(:user)
+      login_as(@user, :scope => :user)
+      visit edit_post_path(@post)
+      expect(current_path).to eq(root_path)
+    end 
+  end	
+end   
