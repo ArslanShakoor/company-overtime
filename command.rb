@@ -70,3 +70,6 @@ rake routes | grep  post
 $ rails g migration add_user_to_posts user:references
 #create custom rake
 rails g task notificatin sms
+
+#create the database again
+bundle exec rake db:setup
