@@ -44,5 +44,6 @@ gem "gritter", "1.2.0"
 gem "administrate"
 gem 'pundit', '~> 1.1'
 gem 'puma', '~> 3.4'
+gem 'twilio-ruby', '~> 4.11', '>= 4.11.1'
 
 

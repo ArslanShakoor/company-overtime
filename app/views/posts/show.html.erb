@@ -11,9 +11,9 @@
 	<div><span>Date:</span><%= @post.date %></div>
 	<div><span>Current Stage of Approval:</span><%= @post.status %></div>
  </h3>
- <%=   link_to "",  edit_post_path(@post)  , class: "glyphicon glyphicon-edit" if policy(@post).update? %>
+ <%=   link_to "",  edit_post_path(@post)  , class: "glyphicon glyphicon-edit icon-value black-hover" if policy(@post).update? %>
 	 
-	  <%=   link_to "",  post_path(@post), method: :delete, class: " glyphicon glyphicon-trash" , data: {confirm: "confirm are you sure?"} %>
+	  <%=   link_to "",  post_path(@post), method: :delete, class: " glyphicon glyphicon-trash icon-value red-hover" , data: {confirm: "confirm are you sure?"} %>
 </div>
  
 

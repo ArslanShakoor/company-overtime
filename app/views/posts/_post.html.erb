@@ -18,8 +18,8 @@
 	  <%= status_label post.status %>
 	</td>
 	<td>
-	  <%=   link_to "",  edit_post_path(post), id: "Edit_#{post.id}", class: "glyphicon glyphicon-edit" if policy(post).update? %>
+	  <%=   link_to "",  edit_post_path(post), id: "Edit_#{post.id}", class: "glyphicon glyphicon-edit icon-value black-hover" if policy(post).update? %>
 	 
-	  <%=   link_to "",  post_path(post), method: :delete, id: "delete_post_#{post.id}_from_index", class: " glyphicon glyphicon-trash" , data: {confirm: "confirm are you sure?"} %>
+	  <%=   link_to "",  post_path(post), method: :delete, id: "delete_post_#{post.id}_from_index", class: " glyphicon glyphicon-trash icon-value red-hover" , data: {confirm: "confirm are you sure?"} %>
 	</td>
 </tr>
