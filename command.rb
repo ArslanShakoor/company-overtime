@@ -68,3 +68,5 @@ rake routes | grep  post
 
 #migration to add relationship
 $ rails g migration add_user_to_posts user:references
+#create custom rake
+rails g task notificatin sms

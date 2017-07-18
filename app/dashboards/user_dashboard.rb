@@ -26,6 +26,7 @@ class UserDashboard < Administrate::BaseDashboard
     type: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    phone_no: Field::String,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -38,6 +39,7 @@ class UserDashboard < Administrate::BaseDashboard
     :id,
     :email,
     :type,
+    :phone_no,
     
   ].freeze
 
@@ -47,10 +49,9 @@ class UserDashboard < Administrate::BaseDashboard
     :posts,
     :id,
     :email,
-  
-     
     :first_name,
     :last_name,
+    :phone_no,
    
      
   ].freeze
@@ -64,7 +65,7 @@ class UserDashboard < Administrate::BaseDashboard
     :password,
     :first_name,
     :last_name,
-    
+    :phone_no,
   ].freeze
 
   # Overwrite this method to customize how users are displayed
