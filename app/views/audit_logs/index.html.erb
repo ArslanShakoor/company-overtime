@@ -1,5 +1,7 @@
 <h1> Audit Logs </h1>
-  
+  <div align="center" id="paginator"> 
+		 <%= paginate @audit_logs, remote: true %>
+	</div>
 	<table class="table table-hover table-striped">
 		<thead>
 			<tr>
@@ -23,10 +25,13 @@
 		</thead>
 
 
-		<tbody>
-		  <%= render @audit_logs %>     
+		<tbody id="audit_logs">
+    <%= render @audit_logs %> 
 	  </tbody>
 	</table>
+	<div align="center" id="paginator1"> 
+		  <%= paginate @audit_logs, remote: true %>
+	</div>  
  	
 
  
