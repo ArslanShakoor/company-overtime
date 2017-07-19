@@ -14,11 +14,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 
 
-
-
- 
-
-
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.0'
@@ -47,5 +42,6 @@ gem "administrate"
 gem 'pundit', '~> 1.1'
 gem 'puma', '~> 3.4'
 gem 'twilio-ruby', '~> 4.11', '>= 4.11.1'
+ 
 
 
