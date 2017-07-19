@@ -1,4 +1,4 @@
-.pending-overtime-approval{
+ .pending-overtime-approval{
   margin-top: 20px;
   margin-bottom: 20px; 	
   background-color: #E3E3E3 ;
@@ -13,6 +13,11 @@
 	color: #F2F2F2;
 	margin: 15px 42px 15px 42px;
 	padding: 15px;
+}
+
+.homepage-block:hover {
+  background-color: #240CAB;
+   
 }
 
 .pending-details{
