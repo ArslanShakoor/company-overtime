@@ -1,22 +1,25 @@
-<h1>Admin</h1>
+ 
 <div class="container-fluid">
-	<div class= "pending-overtime-approval row center">
-		<div class="homepage-block col-md-3">
-		sdfas
-		sdfasd
-		</div>
-		<div class="homepage-block col-md-3">
-		sdfas
-		sdfasd
-		</div>
-		<div class="homepage-block col-md-3">
-		sdfas
-		sdfasd
-		</div>
-		<div class="homepage-block col-md-3">
-		sdfas
-		sdfasd
-		</div>
+ <div class= "pending-overtime-approval row center">
+	 <h2>Items Pending Your Approval</h2>
+	  <% @pending_approvals.each do |pending_approval| %>
+			<div class="homepage-block col-md-3">
+			  <h4>
+			    <%= pending_approval.user.full_name %>
+			 </h4>
+			  <span class="pending-details"> Date Submitted:</span> <%= pending_approval.date %>
+			  <span class="pending-details"> rationale:</span> <%= truncate pending_approval.rationale, length: 42 %> 
+			 
+				<div class="row">
+					<div class="col-md-6">
+		        <%= link_to "Approve", pending_approval, class: "btn btn-success btn-block" %>
+					</div>
+					<div class="col-md-6">
+					  <%= link_to "Review", pending_approval, class: "btn btn-warning btn-block" %>
+					</div>
+				</div>
+			</div>	
+    <%end%>
 	</div>
 	<div class = "pending-submission">
 		
