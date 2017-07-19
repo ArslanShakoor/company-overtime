@@ -1,6 +1,9 @@
 class PostPolicy < ApplicationPolicy
  
-	  def update?
+	  def approve?
+      admin?
+    end  
+    def update?
 	 	  approved? && current_user? 
 	  end
 
