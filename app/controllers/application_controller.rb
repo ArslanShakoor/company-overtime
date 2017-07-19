@@ -14,6 +14,8 @@ class ApplicationController < ActionController::Base
     end  
   end	
 
+   
+
  private
 
 	 def user_not_authorized(exception)
@@ -22,4 +24,5 @@ class ApplicationController < ActionController::Base
 	   flash[:notice] =  "You are not allowed to perform this action"
 	   redirect_to(root_path)
 	 end
+
 end
