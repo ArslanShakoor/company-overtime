@@ -73,3 +73,6 @@ rails g task notificatin sms
 
 #create the database again
 bundle exec rake db:setup
+
+#heroku css not workin
+change deployment.rb file according Overtime project
