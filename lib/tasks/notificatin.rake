@@ -1,7 +1,13 @@
-namespace :notificatin do
+namespace :notification do
   desc "send sms notificatin on schdule"
   task sms: :environment do
-  end
+    message = "log in your account and log the overtime"
+    employees = Employee.all
+   
+    employees.each do |employee|
+      SmsTool.send_message(num: employee.phone_no, msg: message)
+    end 
+  end  
 
   desc "send email notification on schdule "
   task user_email: :environment do
