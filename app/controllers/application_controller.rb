@@ -1,4 +1,9 @@
 class ApplicationController < ActionController::Base
+  
+  def admin_types
+    ['AdminUser']
+  end
+
 	include Pundit
   protect_from_forgery
 

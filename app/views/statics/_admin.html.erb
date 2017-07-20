@@ -30,7 +30,7 @@
 			    <%= audit_log.user.full_name %>
 			 </h4>
 			  <span class="pending-details"> Week Starting:</span> <%=  audit_log.start_date %>
-			  <span class="pending-details"> confirmed at:</span> <%=  audit_log.end_date ||= status_label "pending"%> 
+			  <span class="pending-details"> confirmed at:</span> <%=  audit_log.end_date %> 
 			  <div>
 			    <span class="pending-details"> status:</span> <%=  status_label audit_log.status%> 
 			  </div>

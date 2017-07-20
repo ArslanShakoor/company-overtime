@@ -1,13 +1,17 @@
 <div class="container-fluid">
-	<h1>Employee</h1>
-	 	
 	<div class="row">
-	  <div class="col-md-5 jumbotron employee-blocks">
-	    sdfsdf
-	  </div>
-	  <div class="col-md-5 jumbotron employee-blocks">
-	    dasfsad
-	  </div>
-	</div>
-	
+	 <% if @pending_audits.count != 0 %>
+	    <div class='pending-overtime-approval employee-blocks'>
+		    <h3>Pending your confirmation</h3>
+			  <% @pending_audits.each do |pending_audits|%>  
+			    <%= link_to "I CONFIRM THAT I DID NOT PERFORM ANY OVERTIME FOR THIS WEEK  OF: #{pending_audits.start_date}", confirm_audit_log_path(pending_audits), class: "btn btn-lg btn-primary btn-block", data: {confirm: "confirm are you sure?"}%>
+			  <% end %>    
+	    </div> 
+   <% end %>
+   <div class='pending-overtime-approval employee-blocks'> 
+      <h3>New Requests</h3>
+      <%= link_to "Create New Overtime Request",new_post_path, class: "btn btn-lg btn-primary btn-block"%>
+   </div>
+
+  </div>
 </div>

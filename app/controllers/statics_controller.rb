@@ -1,9 +1,12 @@
 class StaticsController < ApplicationController
 
 	def welcome
-		@pending_approvals=Post.submitted
-    @audit_log=AuditLog.last(10)
+		if admin_types.include?(current_user.try(:type))
+			@pending_approvals=Post.submitted
+	    @audit_log=AuditLog.last(10)
+	  else
+	    @pending_audits= current_user.audit_logs.pending
+	  end    
 	end	
-	
 	
 end
