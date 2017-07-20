@@ -5,6 +5,7 @@ namespace :notification do
     employees = Employee.all
    
     employees.each do |employee|
+      AuditLog.create(user_id: employee.id)
       SmsTool.send_message(num: employee.phone_no, msg: message)
     end 
   end  
