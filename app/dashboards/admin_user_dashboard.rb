@@ -48,7 +48,7 @@ class AdminUserDashboard < Administrate::BaseDashboard
     :posts,
     :id,
     :email,
-    phone_no: Field::String,
+    :phone_no: Field::String,
     
      
     :first_name,
@@ -66,7 +66,7 @@ class AdminUserDashboard < Administrate::BaseDashboard
     :password,
     :first_name,
     :last_name,
-    phone_no: Field::String,
+    :phone_no: Field::String,
     :type,
   ].freeze
 
