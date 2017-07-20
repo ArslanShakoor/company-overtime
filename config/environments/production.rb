@@ -1,9 +1,12 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-config.serve_static_assets = true
-config.assets.compile = true
+  config.serve_static_assets = true
+  config.assets.compile = true
   # Code is not reloaded between requests.
   config.cache_classes = true
+
+  config.action_mailer.delivery_method = :sparkpost
+
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
