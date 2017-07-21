@@ -27,6 +27,8 @@ describe 'navigate' do
 
   describe "new" do
     it "new post nav click" do
+      employee = FactoryGirl.create(:employee_user)
+      login_as(employee, :scope => :user)
       visit root_path
       click_link ("new_post_from_nav")
       expect(page.status_code).to eq(200) 

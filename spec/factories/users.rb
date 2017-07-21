@@ -21,6 +21,15 @@
     phone_no "9043334444"
   end
 
+   factory :employee_user, class: "Employee" do
+    first_name 'employee'
+    last_name 'User'
+    email { generate :email }
+    password "asdfasdf"
+    password_confirmation "asdfasdf"
+    phone_no "9043334444"
+  end
+
   factory :non_authorized_user, class: "User" do
     first_name 'non'
     last_name 'authorized'

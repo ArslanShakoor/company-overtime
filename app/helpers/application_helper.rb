@@ -7,6 +7,14 @@ module ApplicationHelper
     ['AdminUser']
   end
 
+  def admin?
+     admin_types.include?(current_user.type)   
+  end
+
+  def employee?
+    current_user.type == "Employee"
+  end
+
  def status_label status
     case status
     when "pending"	
