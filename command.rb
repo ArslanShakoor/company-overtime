@@ -80,3 +80,6 @@ change deployment.rb file according Overtime project
 
 #rake seed heroku
 heroku run rake db:seed
+
+#for bootstrap layout
+http://www.layoutit.com/build
