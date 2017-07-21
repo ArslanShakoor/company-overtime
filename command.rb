@@ -68,6 +68,7 @@ rake routes | grep  post
 
 #migration to add relationship
 $ rails g migration add_user_to_posts user:references
+
 #create custom rake
 rails g task notificatin sms
 
@@ -76,3 +77,6 @@ bundle exec rake db:setup
 
 #heroku css not workin
 change deployment.rb file according Overtime project
+
+#rake seed heroku
+heroku run rake db:seed
