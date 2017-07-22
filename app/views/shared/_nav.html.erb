@@ -21,10 +21,15 @@
 			   </li>
 	       <% if employee? %>
 		       <li class= <%= active?(posts_path) %> >
-					   <%= link_to "Time one Trackers", posts_path %>
+					   <%= link_to "Time Trackers", posts_path %>
 				   </li>
 		       <li class= <%= active?(new_post_path) %> >
 						<%= link_to "New Entry", new_post_path, id: "new_post_from_nav"  %>
+					 </li>
+				 <% end %>	 
+				 <% if admin? %>	 
+					 <li class= <%= active?(audit_logs_path) %> >
+						<%= link_to "Audit Logs", audit_logs_path, id: "audit_logs_from_nav"  %>
 					 </li>
 			   <% end %>  
 	      </ul>
@@ -39,9 +44,7 @@
 						      <%= link_to "Admin", admin_root_path %> 
 						    </li> 
 						    <li class="divider"></li>
-					      <li>
-						      <%= link_to "Logout", destroy_user_session_path, method: :delete %> 
-					      </li>
+					      
 					    <% end %>	
 					    <li>
 						   <%= link_to "Logout", destroy_user_session_path, method: :delete %> 

@@ -1,7 +1,11 @@
-<% if  flash[:notice]%>
-	<%= js add_gritter(flash[:notice], title: "Notification", sticky: false) %>
-	<%elsif flash[:alert]%>
-	<%= js add_gritter(flash[:alert], title: "Alerts", sticky: false) %>
-	<% else flash[:error] %>
-	<%= js add_gritter(flash[:error], title: "Errors", sticky: false) %>
-<% end %>   
+<% flash.each do |name,msg| %>
+  <script type="text/javascript">
+   <% if  flash[:error]%>
+     toastr['error']('there is an error');
+   <%elsif flash[:alert]%>
+     toastr['info']('<%= msg %>');
+   <% else flash[:success]  %>
+     toastr['success']('<%= msg %>');
+   <% end %>  
+  </script>
+<% end %>  
