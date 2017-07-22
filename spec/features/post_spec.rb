@@ -35,7 +35,7 @@ describe 'navigate' do
     end  
   end
  
- describe "delete" do
+  describe "delete" do
      
     it "delete the post" do
       visit posts_path
