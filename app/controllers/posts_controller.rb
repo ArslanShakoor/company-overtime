@@ -35,7 +35,6 @@ class PostsController < ApplicationController
 
   def update
     authorize @post
-     
     if @post.update(require_params)
       redirect_to @post, notice: "your post was created succesfully"
     else
@@ -45,7 +44,6 @@ class PostsController < ApplicationController
 
   def destroy
     authorize @post
-
     @post.delete
     redirect_to posts_path, notice: "your post was deleted succesfully" 
   end  

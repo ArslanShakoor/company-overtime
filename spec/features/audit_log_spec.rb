@@ -18,5 +18,4 @@ describe "audit logs" do
       expect(page).to_not have_content(/Audit Logs/)
     end  
   end	
-
 end  

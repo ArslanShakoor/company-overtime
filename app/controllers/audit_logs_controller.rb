@@ -9,7 +9,6 @@ class AuditLogsController < ApplicationController
 		@audit_log.approved!
 		@audit_log.end_date = Date.today
     redirect_to root_path, notice:"your log has been confirmed"
-  
   end
 
   private

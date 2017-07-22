@@ -8,5 +8,4 @@ class StaticsController < ApplicationController
 	    @pending_audits= current_user.audit_logs.pending
 	  end    
 	end	
-	
 end
