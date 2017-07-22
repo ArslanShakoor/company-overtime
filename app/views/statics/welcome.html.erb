@@ -1,5 +1,7 @@
 <% if admin_types.include?(current_user.try(:type)) %>
   <%= render "admin" %>
-<% else %>
+<% elsif %>
   <%= render "employee" %>
+<% else %>
+  redirect_to new_user_session  
 <% end %>  

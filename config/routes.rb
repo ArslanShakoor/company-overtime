@@ -5,12 +5,13 @@ Rails.application.routes.draw do
     end
   end  
   namespace :admin do
-    resources :users
+    # resources :users
     resources :posts
     resources :admin_users
     resources :employees
-
-    root to: "users#index"
+     
+    #root to: "users#index"
+    root to: "employees#index"
   end
 
   resources :posts do 
@@ -20,6 +21,8 @@ Rails.application.routes.draw do
   end    
   devise_for :users, skip: [:registrations]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-  root to: 'statics#welcome'
+  authenticated :user do
+    root to: 'statics#welcome', as: :authenticated_root
+  end
+  root to: redirect('/users/sign_in')
 end

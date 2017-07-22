@@ -8,7 +8,6 @@ class PostsController < ApplicationController
     authorize @post
     @post.approved!
     redirect_to root_path, notice:"your post has been approved"
-    
   end
 
   def new

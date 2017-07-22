@@ -13,14 +13,7 @@ class ApplicationController < ActionController::Base
 
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
-
-  def authenticate_user
-    if current_user == nil
-      redirect_to(root_path)
-    end  
-  end	
-
-   
+  
 
  private
 
