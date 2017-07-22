@@ -42,7 +42,7 @@ uaed `Capybara` for BDD
 To help produce test data more easily used Factory Girl
 
 ## Pending Features
-using the Rails 5 great feature `Action Cable` create the chat feature for employees to interact
+using the Rails 5 great feature `Action Cable` and create the chat feature for employees to interact
 
 
 
