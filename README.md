@@ -1,5 +1,5 @@
 # Overtime App
-It is data driven enterprise app using potgres db and Rails framework to track ovetime of employees. The whole application is based upon TDD/BDD approach. All the details are belows 
+It is data driven enterprise app using Potgres db and Rails framework to track ovetime of employees. The whole application is based upon TDD/BDD approach. All the details are below 
 
 ## Gems used in Application
 
