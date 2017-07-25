@@ -6,7 +6,7 @@
   config.cache_classes = true
 
   config.action_mailer.delivery_method = :sparkpost
-  production.config.assets.digest = true
+  config.assets.digest = true
 
 
   # Eager load code on boot. This eager loads most of Rails and
