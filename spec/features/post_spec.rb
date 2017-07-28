@@ -18,12 +18,7 @@ describe 'navigate' do
     expect(page).to have_content(/post1/)
   end
 
-  it 'not show other user content' do
-    @user =  FactoryGirl.create(:user)
-    login_as(@user, :scope => :user)
-    visit posts_path
-    expect(page).not_to have_content(/post1/)
-  end  
+    
 
   describe "new" do
     it "new post nav click" do

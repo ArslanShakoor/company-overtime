@@ -21,6 +21,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'dotenv-rails'
   gem 'factory_girl_rails', '~> 4.8'
+  gem 'rspec-core', '~> 3.4', '>= 3.4.4'
 end
 
 group :development do
