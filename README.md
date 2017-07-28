@@ -32,8 +32,8 @@ used `sparkpost` api to send the emails to Managers(Admins)
 As i always love to create apps Using TDD and BDD  approach so i used the following testing mechanisms used to create 30 tests
 for this application 
 
-### Rsepc
-used `Rsepc` for TDD
+### Rspec
+used `Rspec` for TDD
 
 ### Capybara
 uaed `Capybara` for BDD
